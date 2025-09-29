@@ -1,15 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap');
 
-/* RESET E BASE */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
-  overflow-x: hidden;
 }
 
 a {
@@ -114,8 +108,11 @@ main {
   transition: 0.3s;
 }
 
-/* NAVBAR RESPONSIVO */
 @media (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
+
   .nav-list {
     position: absolute;
     top: 8vh;
@@ -153,21 +150,29 @@ main {
 }
 
 @keyframes navLinkFade {
-  from { opacity: 0; transform: translateX(50px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .mobile-menu.active .line1 {
   transform: rotate(-45deg) translate(-8px, 8px);
 }
 
-.mobile-menu.active .line2 { opacity: 0; }
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
 
 .mobile-menu.active .line3 {
   transform: rotate(45deg) translate(-5px, -7px);
 }
 
-/* SEÇÃO SOBRE NÓS */
+/* Seção Sobre Nós */
 .sobre-nos {
   background-color: #23232e;
   color: #fff;
@@ -211,32 +216,35 @@ main {
   text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.25);
 }
 
-/* VÍDEOS */
-.sobre-container .videos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-}
-
+/* Vídeos e imagens */
+.sobre-container .imagem img,
 .sobre-container .videos video {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sobre-container .videos video:hover {
+.sobre-container .videos video:hover,
+.sobre-container .imagem img:hover {
   transform: scale(1.03);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.45);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45);
 }
 
 /* Animações */
-@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeIn { to { opacity: 1; } }
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-/* SEÇÃO DE PROJETOS */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Seção de Projetos */
 .projetos {
   position: relative;
   background-image: url("im3.png");
@@ -257,7 +265,10 @@ main {
   z-index: 1;
 }
 
-.projetos h2, .projeto { position: relative; z-index: 2; }
+.projetos h2, .projeto {
+  position: relative;
+  z-index: 2;
+}
 
 .projetos h2 {
   font-family: 'Raleway', sans-serif;
@@ -296,37 +307,47 @@ main {
   text-shadow: 2px 2px 6px rgba(0,0,0,0.45);
 }
 
-/* GALERIA DE IMAGENS RESPONSIVA */
+/* Imagens do projeto - galeria flexível */
 .projeto-imagens {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  display: flex;
+  flex-wrap: wrap; /* permite quebrar linha automaticamente */
   gap: 15px;
   margin-bottom: 15px;
-  justify-items: center;
+  justify-content: center; /* centraliza as imagens */
+  overflow: visible; /* sem rolagem horizontal */
+  padding-bottom: 0;
+  scroll-snap-type: none;
 }
 
 .projeto-imagem {
-  width: 100%;
+  width: 300px;
   height: auto;
   max-height: 200px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
-  object-fit: cover;
+  object-fit: contain;
   background: linear-gradient(180deg, rgba(46,46,61,0.8), rgba(46,46,61,0.8));
 }
 
-.projeto-imagem:hover { transform: scale(1.05); }
+.projeto-imagem:hover {
+  transform: scale(1.05);
+}
 
 .projeto-info {
   font-size: 16px;
   line-height: 1.6;
 }
 
-.projeto-info p { margin-bottom: 10px; }
-.projeto-info strong { font-weight: 600; }
+.projeto-info p {
+  margin-bottom: 10px;
+}
 
-/* SEÇÃO Fale Conosco */
+.projeto-info strong {
+  font-weight: 600;
+}
+
+/* Seção Fale Conosco */
 .contato {
   background-color: #23232e;
   padding: 60px 20px;
@@ -354,7 +375,9 @@ main {
   padding: 0;
 }
 
-.info-contato li { margin-bottom: 20px; }
+.info-contato li {
+  margin-bottom: 20px;
+}
 
 .info-contato a {
   color: #fff;
@@ -363,7 +386,9 @@ main {
   text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.25);
 }
 
-.info-contato a:hover { color: #25d366; }
+.info-contato a:hover {
+  color: #25d366;
+}
 
 .info-contato i {
   margin-right: 10px;
@@ -371,11 +396,12 @@ main {
   text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.25);
 }
 
-/* MEDIA QUERIES PARA CELULAR E TABLET */
-@media (max-width: 768px) {
-  .sobre-container { flex-direction: column; gap: 20px; }
-  .sobre-container .videos video { max-width: 100%; }
-  .projeto { padding: 20px; }
-  main { height: auto; background-size: cover; }
+@media (max-width: 999px) {
+  .projeto-imagens {
+    flex-direction: column;
+    flex-wrap: nowrap; /* para celular manter coluna única */
+  }
 }
+
+
 
