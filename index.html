@@ -31,16 +31,17 @@
         flex-wrap: wrap;
       }
 
-      .sobre-container .videos video {
+      /* Estilização para iframes responsivos do YouTube */
+      .sobre-container .videos iframe {
         width: 48%;
         max-width: 300px;
+        aspect-ratio: 16 / 9;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        cursor: pointer;
       }
 
       @media (max-width: 768px) {
-        .sobre-container .videos video {
+        .sobre-container .videos iframe {
           width: 100%;
           max-width: 100%;
         }
@@ -87,16 +88,9 @@
           </p>
         </div>
         <div class="videos">
-          <video 
-            src="https://github.com/hewby/scaconstrutora/releases/download/v1.0/embaixadorv.mp4" 
-            controls 
-            muted>
-          </video>
-          <video 
-            src="https://github.com/hewby/scaconstrutora/releases/download/v1.0/elegancev.mp4" 
-            controls 
-            muted>
-          </video>
+          <!-- Embed do YouTube -->
+          <iframe src="https://www.youtube.com/embed/0a9THSgpFnY" title="Condomínio Embaixador" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/CzGXpzsSb28" title="Condomínio Elegance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </section>
@@ -203,18 +197,10 @@
     <script src="scrollReaveal.js"></script>
     <script>
       document.getElementById("ano-atual").textContent = new Date().getFullYear();
-
-      const videos = document.querySelectorAll(".videos video");
-      videos.forEach(video => {
-        video.addEventListener("play", () => {
-          videos.forEach(v => {
-            if (v !== video) v.pause();
-          });
-        });
-      });
     </script>
   </body>
 </html>
+
 
 
 
