@@ -31,17 +31,16 @@
         flex-wrap: wrap;
       }
 
-      /* Estilização para iframes responsivos do YouTube */
-      .sobre-container .videos iframe {
+      .sobre-container .videos video {
         width: 48%;
         max-width: 300px;
-        aspect-ratio: 16 / 9;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        cursor: pointer;
       }
 
       @media (max-width: 768px) {
-        .sobre-container .videos iframe {
+        .sobre-container .videos video {
           width: 100%;
           max-width: 100%;
         }
@@ -88,9 +87,8 @@
           </p>
         </div>
         <div class="videos">
-          <!-- Embed do YouTube -->
-          <iframe src="https://youtube.com/embed/-h9TeL1-qnU" title="Condomínio Embaixador" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <iframe src="https://youtube.com/embed/7uY8zmrnqA0" title="Condomínio Elegance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <video src="embaixadorv.mp4" controls muted></video>
+          <video src="elegancev.mp4" controls muted></video>
         </div>
       </div>
     </section>
@@ -197,9 +195,19 @@
     <script src="scrollReaveal.js"></script>
     <script>
       document.getElementById("ano-atual").textContent = new Date().getFullYear();
+
+      const videos = document.querySelectorAll(".videos video");
+      videos.forEach(video => {
+        video.addEventListener("play", () => {
+          videos.forEach(v => {
+            if (v !== video) v.pause();
+          });
+        });
+      });
     </script>
   </body>
 </html>
+
 
 
 
