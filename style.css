@@ -55,7 +55,6 @@ main {
 .nav-list {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
 }
 
 .nav-list li {
@@ -72,6 +71,7 @@ main {
   transform: translateY(-2px);
 }
 
+/* WHATSAPP BUTTON */
 .whatsapp-contact {
   margin-left: 80px;
 }
@@ -182,7 +182,7 @@ main {
 
 .sobre-container {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
@@ -218,33 +218,16 @@ main {
 
 /* Vídeos e imagens */
 .sobre-container .imagem img,
-.sobre-container .videos iframe {
+.sobre-container .videos video {
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sobre-container .videos iframe:hover,
+.sobre-container .videos video:hover,
 .sobre-container .imagem img:hover {
   transform: scale(1.03);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45);
-}
-
-.sobre-container .videos iframe {
-  width: 48%;
-  aspect-ratio: 16 / 9;
-}
-
-@media (max-width: 768px) {
-  .sobre-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .sobre-container .videos iframe {
-    width: 100%;
-    max-width: 100%;
-  }
 }
 
 /* Animações */
@@ -324,12 +307,16 @@ main {
   text-shadow: 2px 2px 6px rgba(0,0,0,0.45);
 }
 
+/* Imagens do projeto - galeria flexível */
 .projeto-imagens {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* permite quebrar linha automaticamente */
   gap: 15px;
   margin-bottom: 15px;
-  justify-content: center;
+  justify-content: center; /* centraliza as imagens */
+  overflow: visible; /* sem rolagem horizontal */
+  padding-bottom: 0;
+  scroll-snap-type: none;
 }
 
 .projeto-imagem {
@@ -340,6 +327,7 @@ main {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
   object-fit: contain;
+  background: linear-gradient(180deg, rgba(46,46,61,0.8), rgba(46,46,61,0.8));
 }
 
 .projeto-imagem:hover {
@@ -411,9 +399,10 @@ main {
 @media (max-width: 999px) {
   .projeto-imagens {
     flex-direction: column;
-    flex-wrap: nowrap;
+    flex-wrap: nowrap; /* para celular manter coluna única */
   }
 }
+
 
 
 
