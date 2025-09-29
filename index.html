@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      .sobre-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      .sobre-container .texto {
+        flex: 1 1 300px;
+      }
+
+      .sobre-container .videos {
+        flex: 1 1 400px;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .sobre-container .videos video {
+        width: 48%;
+        max-width: 300px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        cursor: pointer;
+      }
+
+      @media (max-width: 768px) {
+        .sobre-container .videos video {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a class="logo" href="index.html">SCA Construtora</a>
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+          <li><a href="index.html">INÍCIO</a></li>
+          <li><a href="#sobre">SOBRE NÓS</a></li>
+          <li><a href="#projetos">PROJETOS</a></li>
+          <li><a href="#faleconosco">FALE CONOSCO</a></li>
+          <li class="whatsapp-contact">
+            <a
+              href="https://wa.me/5561984531084"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-whatsapp"></i> (61) 98453-1084
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main></main>
+
+    <!-- Seção SOBRE NÓS -->
+    <section class="sobre-nos" id="sobre">
+      <div class="sobre-container">
+        <div class="texto">
+          <h2>Sobre Nós</h2>
+          <p>
+            Somos uma empresa especializada em construção e venda de imóveis no Distrito Federal, realizando sonhos há mais de 10 anos, com um excelente padrão de qualidade.
+          </p>
+        </div>
+        <div class="videos">
+          <video src="embaixadorv.mp4" controls muted></video>
+          <video src="elegancev.mp4" controls muted></video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Projetos -->
+    <section class="projetos" id="projetos">
+      <h2>Projetos</h2>
+
+      <!--Condomínio Bougainville-->
+      <div class="projeto">
+        <h3>Condomínio Bougainville</h3>
+        <div class="projeto-imagens">
+          <img src="bougainville1.jpg" alt="Frente" class="projeto-imagem" />
+          <img src="bougainville2.jpg" alt="Interno" class="projeto-imagem" />
+          <img src="bougainville3.jpg" alt="Interno" class="projeto-imagem" />
+          <img src="bougainville4.jpg" alt="Interno" class="projeto-imagem" />
+          <img src="bougainville5.jpg" alt="Interno" class="projeto-imagem" />
+        </div>
+        <div class="projeto-info">
+          <p><strong>Status:</strong> Vendido</p>
+          <p><strong>Localidade:</strong> Ponte Alta</p>
+          <p><strong>Data de Conclusão:</strong> Dezembro de 2023</p>
+        </div>
+      </div>
+
+      <!--Condomínio Elegance -->
+      <div class="projeto">
+        <h3>Condomínio Elegance</h3>
+        <div class="projeto-imagens">
+          <img src="elegance1.jpeg" alt="Frente" class="projeto-imagem" />
+          <img src="elegance2.jpeg" alt="Frente" class="projeto-imagem" />
+          <img src="elegance3.jpeg" alt="Interno" class="projeto-imagem" />
+          <img src="elegance4.jpeg" alt="Interno" class="projeto-imagem" />
+          <img src="elegance5.jpeg" alt="Interno" class="projeto-imagem" />
+          <img src="elegance6.jpeg" alt="Externo" class="projeto-imagem" />
+        </div>
+        <div class="projeto-info">
+          <p><strong>Status:</strong> Vendido</p>
+          <p><strong>Localidade:</strong> Ponte Alta</p>
+          <p><strong>Data de Conclusão:</strong> Novembro de 2024</p>
+        </div>
+      </div>
+
+      <!--Condomínio Embaixador-->
+      <div class="projeto">
+        <h3>Condomínio Embaixador</h3>
+        <div class="projeto-imagens">
+          <img src="embaixador1.jpeg" alt="Frente" class="projeto-imagem" />
+          <img src="embaixador2.jpeg" alt="Frente" class="projeto-imagem" />
+          <img src="embaixador3.jpeg" alt="Frente" class="projeto-imagem" />
+          <img src="embaixador4.jpeg" alt="Interior" class="projeto-imagem" />
+          <img src="embaixador5.jpeg" alt="Interior" class="projeto-imagem" />
+          <img src="embaixador6.jpeg" alt="Interior" class="projeto-imagem" />
+          <img src="embaixador7.jpeg" alt="Interior" class="projeto-imagem" />
+          <img src="embaixador8.jpeg" alt="Externo" class="projeto-imagem" />
+          <img src="embaixador9.jpeg" alt="Externo" class="projeto-imagem" />
+          <img src="embaixador10.jpeg" alt="Banheiro" class="projeto-imagem" />
+        </div>
+        <div class="projeto-info">
+          <p><strong>Status:</strong> Vendido</p>
+          <p><strong>Localidade:</strong> Ponte Alta</p>
+          <p><strong>Data de Conclusão:</strong> Março de 2025</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Fale Conosco -->
+    <footer class="contato" id="faleconosco">
+      <div class="contato-container">
+        <h2>Fale Conosco</h2>
+        <ul class="info-contato">
+          <li>
+            <a href="mailto:ct.alexandria@hotmail.com">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="mailto:ct.alexandria@hotmail.com">ct.alexandria@hotmail.com</a>
+          </li>
+          <li>
+            <a href="tel:+5561984531084">
+              <i class="fas fa-phone-alt"></i>
+            </a>
+            <a href="tel:+5561984531084">(61) 98453-1084</a>
+          </li>
+          <li>
+            <a href="https://wa.me/5561984531084" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://wa.me/5561984531084" target="_blank" rel="noopener noreferrer">(61) 98453-1084</a>
+          </li>
+          <li>
+            <a href="https://instagram.com/sca.construtora" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://instagram.com/sca.construtora" target="_blank" rel="noopener noreferrer">@sca.construtora</a>
+          </li>
+        </ul>
+        <p class="copyright">
+          &copy; <span id="ano-atual"></span> SCA CONSTRUTORA. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="mobile-navbar.js"></script>
+    <script src="scrollReaveal.js"></script>
+    <script>
+      document.getElementById("ano-atual").textContent = new Date().getFullYear();
+
+      const videos = document.querySelectorAll(".videos video");
+      videos.forEach(video => {
+        video.addEventListener("play", () => {
+          videos.forEach(v => {
+            if (v !== video) v.pause();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
