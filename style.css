@@ -58,14 +58,13 @@ nav {
   z-index: 999;
 }
 
-/* MAIN BACKGROUND */
 main {
   width: 100%;
-  height: calc(100vh - 8vh); /* altura da tela menos a navbar */
+  height: calc(100vh - 8vh);
   background-image: url("background.png");
   background-repeat: no-repeat;
-  background-position: center center; /* centraliza a imagem */
-  background-size: cover; /* mantém a proporção e cobre toda a área */
+  background-position: center; /* centraliza a imagem */
+  background-size: cover; /* mantém proporção, preenche o container e corta o excesso se necessário */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -378,6 +377,7 @@ main {
     flex: 1 1 100%;
   }
 }
+
 
 
 
