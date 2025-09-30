@@ -61,7 +61,7 @@ nav {
 /* MAIN BACKGROUND */
 main {
   background: url("background.png") no-repeat top center;
-  background-size: 100% auto; /* largura sempre ajusta à tela */
+  background-size: cover; /* cobre toda a área sem deixar bordas pretas */
   background-color: #000;
   min-height: 92vh;
   width: 100%;
@@ -214,7 +214,6 @@ main {
   text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.25);
 }
 
-/* Vídeos e imagens */
 .sobre-container .imagem img,
 .sobre-container .videos video {
   border-radius: 12px;
@@ -244,7 +243,7 @@ main {
 .projetos {
   position: relative;
   background-image: url("im3.png");
-  background-size: 100% auto; /* largura se ajusta à tela */
+  background-size: cover; /* cobre toda a área horizontal e vertical */
   background-position: top center;
   background-repeat: no-repeat;
   background-color: #000;
@@ -375,11 +374,6 @@ main {
     flex: 1 1 100%;
   }
 }
-
-
-
-
-
 
 
 
