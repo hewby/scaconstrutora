@@ -370,30 +370,27 @@ main {
 }
 
 @media (max-width: 999px) {
-  /* Vídeos lado a lado no mobile */
   .sobre-container .videos {
-    display: grid;
+    display: grid !important; /* força grid em vez de flex */
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     width: 100%;
   }
 
   .sobre-container .videos video {
-    width: 100%;
-    flex: none;
+    width: 100% !important; /* reseta o 48% */
+    max-width: none;        /* libera limite de largura */
   }
 
-  /* Imagens lado a lado no mobile */
   .projeto-imagens {
-    display: grid;
+    display: grid !important;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
 
   .projeto-imagem {
-    width: 100%;
+    width: 100% !important;
     max-width: none;
-    flex: none;
   }
 }
 
