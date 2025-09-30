@@ -61,7 +61,6 @@ nav {
 main {
   background: url("background.png") no-repeat center center;
   background-size: cover;
-  background-color: #000;
   min-height: 92vh;
   width: 100%;
   display: flex;
@@ -181,12 +180,11 @@ main {
 
 .sobre-container {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  gap: 50px;
-  flex-wrap: wrap;
   opacity: 0;
   transform: translateY(40px);
   animation: fadeUp 1s ease forwards;
@@ -213,7 +211,6 @@ main {
   text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.25);
 }
 
-/* Vídeos e imagens */
 .sobre-container .imagem img,
 .sobre-container .videos video {
   border-radius: 12px;
@@ -225,16 +222,11 @@ main {
   cursor: pointer;
 }
 
-/* Garante dois vídeos visíveis no mobile */
+/* Vídeos organizados responsivamente */
 .sobre-container .videos {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
-}
-
-.sobre-container .videos video {
-  flex: 1 1 calc(50% - 10px);
-  min-width: 150px;
 }
 
 /* Animações */
@@ -301,26 +293,26 @@ main {
   text-shadow: 2px 2px 6px rgba(0,0,0,0.45);
 }
 
+/* Galeria responsiva */
 .projeto-imagens {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 15px;
   margin-bottom: 15px;
-  justify-content: center;
+  justify-items: center;
   overflow: visible;
   padding-bottom: 0;
 }
 
 .projeto-imagem {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: auto;
-  max-height: 200px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
   object-fit: contain;
   background: linear-gradient(180deg, rgba(46,46,61,0.8), rgba(46,46,61,0.8));
-  max-width: 100%;
   cursor: pointer;
 }
 
@@ -338,10 +330,7 @@ main {
   text-align: center;
 }
 
-.contato-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+.contato-container { max-width: 1200px; margin: 0 auto; }
 
 .contato h2 {
   font-family: 'Raleway', sans-serif;
@@ -369,14 +358,10 @@ main {
 }
 
 @media (max-width: 999px) {
-  .projeto-imagens {
-    flex-direction: column;
-    flex-wrap: nowrap;
-  }
-  .sobre-container .videos video {
-    flex: 1 1 100%;
-  }
+  .sobre-container .videos video { flex: 1 1 100%; }
 }
+
+
 
 
 
