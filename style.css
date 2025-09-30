@@ -60,11 +60,12 @@ nav {
 
 main {
   width: 100%;
-  height: calc(100vh - 8vh);
+  height: auto; 
+  aspect-ratio: 16 / 9; /* substitua pela proporção real da sua imagem */
   background-image: url("background.png");
   background-repeat: no-repeat;
-  background-position: center; /* centraliza a imagem */
-  background-size: cover; /* mantém proporção, preenche o container e corta o excesso se necessário */
+  background-position: center center;
+  background-size: 100% 100%; /* vai comprimir proporcionalmente à largura */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -377,6 +378,7 @@ main {
     flex: 1 1 100%;
   }
 }
+
 
 
 
