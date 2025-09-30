@@ -370,14 +370,34 @@ main {
 }
 
 @media (max-width: 999px) {
-  .projeto-imagens {
-    flex-direction: column;
-    flex-wrap: nowrap;
+  /* Vídeos lado a lado no mobile */
+  .sobre-container .videos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
   }
+
   .sobre-container .videos video {
-    flex: 1 1 100%;
+    width: 100%;
+    flex: none;
+  }
+
+  /* Imagens lado a lado no mobile */
+  .projeto-imagens {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .projeto-imagem {
+    width: 100%;
+    max-width: none;
+    flex: none;
   }
 }
+
+
 
 
 
