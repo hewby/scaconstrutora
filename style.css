@@ -6,11 +6,6 @@
   box-sizing: border-box;
   }
 
-html, body {
-width: 100%;
-overflow-x: hidden;
-}
-
 a {
 color: #fff;
 text-decoration: none;
@@ -21,6 +16,14 @@ text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
 a:hover {
 opacity: 0.8;
 transform: scale(1.02);
+}
+
+html, body {
+margin: 0;
+padding: 0;
+width: 100%;
+max-width: 100%;
+overflow-x: hidden; /* remove barra lateral branca */
 }
 
 body {
@@ -53,7 +56,8 @@ box-shadow: 0 2px 10px rgba(0,0,0,0.4);
 
 main {
 background: url("background.png") no-repeat center center;
-background-size: cover;
+background-size: contain; /* mostra a imagem inteira em qualquer tela */
+background-color: #000;   /* preenche áreas sobrando */
 height: 92vh;
 }
 
@@ -122,16 +126,14 @@ overflow-x: hidden;
 position: absolute;
 top: 8vh;
 right: 0;
-width: 100vw;
+width: 60vw;
 height: 92vh;
 background: #23232e;
 flex-direction: column;
 align-items: center;
-justify-content: center;
-gap: 20px;
+justify-content: space-around;
 transform: translateX(100%);
 transition: transform 0.3s ease-in-out;
-padding: 20px;
 }
 
 .nav-list li {
@@ -189,11 +191,11 @@ text-align: left;
 
 .sobre-container {
 display: flex;
-align-items: flex-start;
+align-items: center;
 justify-content: center;
 max-width: 1200px;
 margin: 0 auto;
-gap: 40px;
+gap: 50px;
 flex-wrap: wrap;
 opacity: 0;
 transform: translateY(40px);
@@ -202,14 +204,14 @@ animation-delay: 0.3s;
 }
 
 .sobre-container .texto {
-flex: 1 1 380px;
+flex: 1 1 400px;
 }
 
 .sobre-container h2 {
 font-family: 'Raleway', sans-serif;
 font-weight: 300;
-font-size: 34px;
-margin-bottom: 18px;
+font-size: 36px;
+margin-bottom: 20px;
 text-transform: uppercase;
 letter-spacing: 1.5px;
 color: #fff;
@@ -217,34 +219,27 @@ text-shadow: 3px 3px 10px rgba(0,0,0,0.6);
 }
 
 .sobre-container p {
-font-size: 17px;
+font-size: 18px;
 line-height: 1.9;
 color: #ccc;
 text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.25);
 }
 
-/* Vídeos */
-.sobre-container .videos {
-display: flex;
-flex-wrap: wrap;
-gap: 14px;
-justify-content: center;
-flex: 1 1 400px;
-}
-
+/* Vídeos e imagens */
+.sobre-container .imagem img,
 .sobre-container .videos video {
-width: 100%;
-max-width: 340px;
 border-radius: 12px;
 box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-background: #000;
-aspect-ratio: 16/9;
-object-fit: cover;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+max-width: 100%; /* garante que não estoure no mobile */
+height: auto;
+display: block;
 }
 
-.sobre-container .videos video:hover {
+.sobre-container .videos video:hover,
+.sobre-container .imagem img:hover {
 transform: scale(1.03);
-transition: transform 0.3s ease;
+box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45);
 }
 
 /* Animações */
@@ -255,12 +250,19 @@ transform: translateY(0);
 }
 }
 
+@keyframes fadeIn {
+to {
+opacity: 1;
+}
+}
+
 /* Seção de Projetos */
 .projetos {
 position: relative;
 background-image: url("im3.png");
-background-size: cover;
+background-size: contain; /* mostra a imagem completa */
 background-position: center;
+background-color: #000; /* preenche áreas sobrando */
 padding: 100px 20px;
 color: #333;
 }
@@ -268,7 +270,10 @@ color: #333;
 .projetos::before {
 content: '';
 position: absolute;
-inset: 0;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
 background-color: rgba(0, 0, 0, 0.5);
 z-index: 1;
 }
@@ -281,10 +286,10 @@ z-index: 2;
 .projetos h2 {
 font-family: 'Raleway', sans-serif;
 font-weight: 300;
-font-size: 34px;
+font-size: 36px;
 text-align: center;
 text-transform: uppercase;
-margin-bottom: 36px;
+margin-bottom: 40px;
 color: #fff;
 letter-spacing: 1px;
 text-shadow: 3px 3px 10px rgba(0,0,0,0.6);
@@ -292,10 +297,10 @@ text-shadow: 3px 3px 10px rgba(0,0,0,0.6);
 
 .projeto {
 background-color: #2e2e3d;
-padding: 24px;
-margin-bottom: 36px;
+padding: 25px;
+margin-bottom: 40px;
 border-radius: 10px;
-box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
 color: #fff;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
 text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.25);
@@ -309,29 +314,34 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 .projeto h3 {
 font-family: 'Raleway', sans-serif;
 font-weight: 300;
-font-size: 24px;
-margin-bottom: 14px;
+font-size: 26px;
+margin-bottom: 15px;
 text-transform: uppercase;
 text-shadow: 2px 2px 6px rgba(0,0,0,0.45);
 }
 
-/* Galeria de imagens */
+/* Imagens do projeto - galeria flexível */
 .projeto-imagens {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-gap: 14px;
-margin-bottom: 14px;
-justify-content: center;
+display: flex;
+flex-wrap: wrap; /* permite quebrar linha automaticamente */
+gap: 15px;
+margin-bottom: 15px;
+justify-content: center; /* centraliza as imagens */
+overflow: visible; /* sem rolagem horizontal */
+padding-bottom: 0;
+scroll-snap-type: none;
 }
 
 .projeto-imagem {
-width: 100%;
-height: 160px;
+width: 300px;
+height: auto;
+max-height: 200px;
 border-radius: 10px;
 box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 transition: transform 0.3s ease;
-object-fit: cover;
-background: #111;
+object-fit: contain;
+background: linear-gradient(180deg, rgba(46,46,61,0.8), rgba(46,46,61,0.8));
+max-width: 100%; /* evita estouro */
 }
 
 .projeto-imagem:hover {
@@ -367,9 +377,9 @@ margin: 0 auto;
 .contato h2 {
 font-family: 'Raleway', sans-serif;
 font-weight: 300;
-font-size: 30px;
+font-size: 32px;
 text-transform: uppercase;
-margin-bottom: 28px;
+margin-bottom: 30px;
 letter-spacing: 1px;
 text-shadow: 3px 3px 10px rgba(0,0,0,0.6);
 }
@@ -380,12 +390,12 @@ padding: 0;
 }
 
 .info-contato li {
-margin-bottom: 18px;
+margin-bottom: 20px;
 }
 
 .info-contato a {
 color: #fff;
-font-size: 17px;
+font-size: 18px;
 transition: color 0.3s ease;
 text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.25);
 }
@@ -396,91 +406,18 @@ color: #25d366;
 
 .info-contato i {
 margin-right: 10px;
-font-size: 20px;
+font-size: 22px;
 text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.25);
 }
 
-/* RESPONSIVIDADE */
 @media (max-width: 999px) {
-.sobre-container {
-flex-direction: column;
-align-items: center;
-text-align: center;
-gap: 20px;
-}
-
-.sobre-container .texto {
-padding: 0 10px;
-}
-
-.sobre-container .videos {
-width: 100%;
-}
-
 .projeto-imagens {
-grid-template-columns: 1fr;
+flex-direction: column;
+flex-wrap: nowrap; /* para celular manter coluna única */
 }
 }
 
-@media (max-width: 768px) {
-nav {
-height: 60px;
-}
 
-.logo {
-font-size: 22px;
-}
-
-.sobre-nos {
-padding: 60px 16px;
-}
-
-.sobre-container h2 {
-font-size: 26px;
-}
-
-.sobre-container p {
-font-size: 15px;
-}
-
-.projetos {
-padding: 60px 16px;
-}
-
-.projetos h2 {
-font-size: 26px;
-}
-
-.projeto h3 {
-font-size: 18px;
-}
-
-.contato {
-padding: 40px 16px;
-}
-}
-
-@media (max-width: 420px) {
-.logo {
-font-size: 20px;
-}
-
-.nav-list li {
-font-size: 16px;
-}
-
-.sobre-container h2 {
-font-size: 22px;
-}
-
-.sobre-container p {
-font-size: 14px;
-}
-
-.projeto-imagem {
-height: 120px;
-}
-}
 
 
 
