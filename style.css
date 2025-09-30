@@ -58,9 +58,11 @@ nav {
   z-index: 999;
 }
 
+/* MAIN BACKGROUND */
 main {
-  background: url("background.png") no-repeat center center;
-  background-size: cover;
+  background: url("background.png") no-repeat top center;
+  background-size: 100% auto; /* largura sempre ajusta à tela */
+  background-color: #000;
   min-height: 92vh;
   width: 100%;
   display: flex;
@@ -180,11 +182,12 @@ main {
 
 .sobre-container {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
+  gap: 50px;
+  flex-wrap: wrap;
   opacity: 0;
   transform: translateY(40px);
   animation: fadeUp 1s ease forwards;
@@ -211,6 +214,7 @@ main {
   text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.25);
 }
 
+/* Vídeos e imagens */
 .sobre-container .imagem img,
 .sobre-container .videos video {
   border-radius: 12px;
@@ -222,14 +226,17 @@ main {
   cursor: pointer;
 }
 
-/* Vídeos organizados responsivamente */
 .sobre-container .videos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
-/* Animações */
+.sobre-container .videos video {
+  flex: 1 1 calc(50% - 10px);
+  min-width: 150px;
+}
+
 @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeIn { to { opacity: 1; } }
 
@@ -237,8 +244,8 @@ main {
 .projetos {
   position: relative;
   background-image: url("im3.png");
-  background-size: cover;
-  background-position: center;
+  background-size: 100% auto; /* largura se ajusta à tela */
+  background-position: top center;
   background-repeat: no-repeat;
   background-color: #000;
   padding: 100px 20px;
@@ -293,26 +300,25 @@ main {
   text-shadow: 2px 2px 6px rgba(0,0,0,0.45);
 }
 
-/* Galeria responsiva */
 .projeto-imagens {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 15px;
   margin-bottom: 15px;
-  justify-items: center;
+  justify-content: center;
   overflow: visible;
   padding-bottom: 0;
 }
 
 .projeto-imagem {
-  width: 100%;
+  flex: 1 1 calc(25% - 15px);
+  min-width: 150px;
   max-width: 300px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
-  object-fit: contain;
-  background: linear-gradient(180deg, rgba(46,46,61,0.8), rgba(46,46,61,0.8));
+  object-fit: cover;
   cursor: pointer;
 }
 
@@ -330,7 +336,10 @@ main {
   text-align: center;
 }
 
-.contato-container { max-width: 1200px; margin: 0 auto; }
+.contato-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .contato h2 {
   font-family: 'Raleway', sans-serif;
@@ -358,8 +367,15 @@ main {
 }
 
 @media (max-width: 999px) {
-  .sobre-container .videos video { flex: 1 1 100%; }
+  .projeto-imagens {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .sobre-container .videos video {
+    flex: 1 1 100%;
+  }
 }
+
 
 
 
