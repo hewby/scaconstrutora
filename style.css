@@ -60,16 +60,17 @@ nav {
 
 /* MAIN BACKGROUND */
 main {
-  background: url("background.png") no-repeat center center;
-  background-size: cover; 
-  background-color: #000;
   width: 100%;
-  height: 100vh; /* ocupa 100% da altura da tela */
+  height: calc(100vh - 8vh); /* altura da tela menos a navbar */
+  background-image: url("background.png");
+  background-repeat: no-repeat;
+  background-position: top center; /* centraliza horizontalmente e começa no topo */
+  background-size: 100% 100%; /* ajusta largura e altura para preencher o espaço exato */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* NAV LIST */
@@ -377,6 +378,8 @@ main {
     flex: 1 1 100%;
   }
 }
+
+
 
 
 
